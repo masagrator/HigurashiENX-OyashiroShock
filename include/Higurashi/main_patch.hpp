@@ -1,7 +1,7 @@
 #include <vector>
 #include <string>
 
-std::vector<std::string> LV0 = {
+std::array<std::string, 60> LV0 = {
 	"VT_QL0_1001",
 	"qlv0_01",
 	"1問目",
@@ -64,7 +64,7 @@ std::vector<std::string> LV0 = {
 	"9問目"
 };
 
-std::vector<std::string> LV1_8 = {
+std::array<std::string, 2880> LV1_8 = {
 	"VT_QL1_1001",
 	"qlv1_01",
 	"5個",
