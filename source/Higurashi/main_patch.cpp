@@ -12,22 +12,12 @@ void (*Initialize_original)();
 void Initialize_hook()
 {
 	Initialize_original();
-	size_t LV1_8_size = LV1_8.size();
-	const char* address[LV1_8_size];
-	for (size_t i = 0; i < LV1_8_size; i++) {
-		static uint16_t temp = 0;
-		address[i] = LV1_8[i].c_str();
-		memcpy((void*)(TextRegionOffset + 0x1c3a18 + temp), (const void*)&address[i], 8);
-		temp += 8;
-	}
-	size_t LV0_size = LV0.size();
-	const char* address2[LV0_size];
-	for (size_t i = 0; i < LV0_size; i++) {
-		static uint16_t temp = 0;
-		address2[i] = LV0[i].c_str();
-		memcpy((void*)(TextRegionOffset + 0x1c9458 + temp), (const void*)&address2[i], 8);
-		temp += 8;
-	}
+	size_t array_size = (sizeof(LVOnetoEight))/(sizeof(LVOnetoEight[0]));
+	for (size_t i = 0; i < array_size; i++)
+		memcpy((void*)(TextRegionOffset + 0x1c3a18 + (i * 8)), (const void*)LVOnetoEight[i], 8);
+	array_size = (sizeof(LVZero))/(sizeof(LVZero[0]));
+	for (size_t i = 0; i < array_size; i++)
+		memcpy((void*)(TextRegionOffset + 0x1c9458 + (i * 8)), (const void*)LVZero[i], 8);
 	return;
 }
 
