@@ -1,6 +1,4 @@
-#include <string>
-
-std::string LV0[] = {
+const char* LVZero[] = {
 	"VT_QL0_1001",
 	"qlv0_01",
 	"1問目",
@@ -63,7 +61,7 @@ std::string LV0[] = {
 	"9問目"
 };
 
-std::string LV1_8[] = {
+const char* LVOnetoEight[] = {
 	"VT_QL1_1001",
 	"qlv1_01",
 	"5個",
